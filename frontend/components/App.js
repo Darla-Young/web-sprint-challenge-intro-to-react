@@ -32,7 +32,9 @@ function App() {
       {people.map(char => {
         const planetId = char.homeworld;
         const planetName = planets.find(planet => planet.id === planetId).name;
-        <Character id={char.id} name={char.name} homeworld={{id: planetId, name: planetName}} />
+        return(
+          <Character key={char.id} name={char.name} homeworld={{id: planetId, name: planetName}} />
+        )
       })}
     </div>
   )
